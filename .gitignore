@@ -51,3 +51,7 @@ bower.json
 Session.vim
 .netrwhist
 *~
+.ruby-version
+.ruby-gemset
+
+config/database.yml
