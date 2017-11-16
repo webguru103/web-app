@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
+Please start React and Redux on Ruby on Rails
 * Ruby version
+- ruby --version
+- ~> ruby-2.4.1
+* Get started Basic Project
+- bundle install
+- nvm install v8.9.0
+- nvm use v8.9.0
+- node --version  // v8.9.0
+- npm --version   // 5.5.1
+- npm install
+Then
+- rails s
 
-* System dependencies
+In browser
+- localhost:3000
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Current state
+In progress for React and Redux front-end
