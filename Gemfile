@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '~> 2.4.1'
+ruby '2.4.1'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
@@ -58,8 +58,10 @@ group :development, :test do
 end
 
 group :test do
+  gem 'database_cleaner'
   gem 'rails-controller-testing'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'simplecov', require: false
 end
 
 group :development do

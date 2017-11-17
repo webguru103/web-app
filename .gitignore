@@ -55,3 +55,5 @@ Session.vim
 .ruby-gemset
 
 config/database.yml
+
+coverage
