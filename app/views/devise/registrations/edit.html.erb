@@ -4,9 +4,39 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= image_tag current_user.avatar.url if current_user.avatar.url.present? %><br />
+    <%= f.label :remove_avatar %>
+    <%= f.check_box :remove_avatar %>
+    <br />
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+    <%= f.hidden_field :avatar_cache %>
+  </div><br />
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div><br />
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div><br />
+
+  <div class="field">
+    <%= f.label :display_name %><br />
+    <%= f.text_field :display_name %>
+  </div><br />
+
+  <div class="field">
+    <%= f.label :time_zone %><br />
+    <%= f.time_zone_select :timezone %>
+  </div><br />
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
-  </div>
+  </div><br />
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -19,17 +49,17 @@
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
-  </div>
+  </div><br />
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+  </div><br />
 
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+  </div><br />
 
   <div class="actions">
     <%= f.submit "Update" %>

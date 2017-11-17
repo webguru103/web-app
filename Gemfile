@@ -41,7 +41,9 @@ gem 'react-rails'
 
 gem 'browserify-rails'
 
+gem 'carrierwave', '~> 0.11.2'
 gem 'devise'
+gem 'fog-aws'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
