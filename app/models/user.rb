@@ -5,14 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable,
          :validatable, :confirmable
 
-  mount_uploader :avatar, AvatarUploader
-
   validates :email, length: { maximum: 100 }
   validates :first_name, :last_name, :display_name, presence: true,
                                                     length: { maximum: 50 }
   validates :timezone, presence: true
 
-  before_save :set_display_name
+  before_create :set_display_name
 
   private
 

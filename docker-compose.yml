@@ -1,0 +1,19 @@
+version: '2'
+services:
+  web:
+    build: .
+    entrypoint: ["bin/docker-entrypoint.sh"]
+    command: bundle exec rails s -b 0.0.0.0
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgres://actioned_user@postgres/actioned_db
+  postgres:
+    image: postgres:9.6.2-alpine
+    environment:
+      POSTGRES_USER: actioned_user
+      POSTGRES_DB: actioned_db
