@@ -51,8 +51,20 @@ RSpec.describe User, type: :model do
   end
 
   describe 'User avatar' do
-    it 'has the correct format' do
-      expect(uploader).to be_format('png')
+    it 'the header version to be exactly 30 by 30 pixels' do
+      expect(uploader.header).to have_dimensions(30, 30)
+    end
+
+    it 'the team version to be exactly 40 by 40 pixels' do
+      expect(uploader.team).to have_dimensions(40, 40)
+    end
+
+    it 'the member version to be exactly 55 by 55 pixels' do
+      expect(uploader.member).to have_dimensions(55, 55)
+    end
+
+    it 'the profile version to be exactly 100 by 100 pixels' do
+      expect(uploader.profile).to have_dimensions(100, 100)
     end
   end
 end

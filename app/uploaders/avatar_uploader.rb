@@ -2,7 +2,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
 
@@ -11,14 +11,13 @@ class AvatarUploader < CarrierWave::Uploader::Base
       config.storage = :fog
       config.fog_credentials = { provider: 'AWS',                                     # required
                                  aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],         # required
-                                 aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']  # required
-      }
+                                 aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'] }  # required
       config.fog_directory  = ENV['AWS_BUCKET_NAME']                                  # required
       config.fog_public     = true                                                    # optional, defaults to true
       config.root = Rails.root.join('tmp')
       config.cache_dir = 'files'
       config.permissions = 0777
-      config.fog_attributes = { 'Cache-Control' => 'max-age=315576000' }                # optional, defaults to {}
+      config.fog_attributes = { 'Cache-Control' => 'max-age=315576000' }              # optional, defaults to {}
     end
   else
     CarrierWave.configure do |config|
@@ -52,6 +51,22 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #   process :resize_to_fit => [50, 50]
   # end
 
+  version :header do
+    process resize_to_fill: [30, 30]
+  end
+
+  version :team do
+    process resize_to_fill: [40, 40]
+  end
+
+  version :member do
+    process resize_to_fill: [55, 55]
+  end
+
+  version :profile do
+    process resize_to_fill: [100, 100]
+  end
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list
@@ -63,5 +78,4 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
 end
