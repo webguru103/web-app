@@ -2,6 +2,8 @@
 # https://stackoverflow.com/a/38732187/1935918
 set -e
 
+npm install
+
 if [ -f /app/tmp/pids/server.pid ]; then
   rm /app/tmp/pids/server.pid
 fi
