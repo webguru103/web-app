@@ -5,9 +5,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: %w[first_name last_name display_name timezone
-                                                         avatar remove_avatar avatar_cache])
-    devise_parameter_sanitizer.permit(:account_update, keys: %w[first_name last_name display_name timezone
-                                                                avatar remove_avatar avatar_cache])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %w[first_name last_name display_name timezone])
   end
 end
