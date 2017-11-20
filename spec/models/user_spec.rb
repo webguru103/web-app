@@ -50,7 +50,7 @@ RSpec.describe User, type: :model do
     it { expect(user.display_name).to eq(user.first_name) }
   end
 
-  describe 'Avatar' do
+  describe 'User avatar' do
     it 'has the correct format' do
       expect(uploader).to be_format('png')
     end
