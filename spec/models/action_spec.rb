@@ -9,7 +9,7 @@ RSpec.describe Action, type: :model do
     end
   end
 
-  describe 'Validations' do
+  describe 'Model validations' do
     it { expect(action).to validate_length_of(:description).is_at_most(200) }
   end
 end

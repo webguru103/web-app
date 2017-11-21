@@ -8,21 +8,23 @@ RSpec.describe User, type: :model do
     user.save
   end
 
-  it 'has a valid factory' do
-    expect(user).to be_valid
+  describe 'Valid attributes' do
+    it 'has a valid factory' do
+      expect(user).to be_valid
+    end
+
+    it 'is invalid with blank attributes' do
+      expect(User.create(email: '',
+                         password: '',
+                         password_confirmation: '',
+                         first_name: '',
+                         last_name: '',
+                         display_name: '',
+                         timezone: '')).not_to be_valid
+    end
   end
 
-  it 'is invalid with blank attributes' do
-    expect(User.create(email: '',
-                       password: '',
-                       password_confirmation: '',
-                       first_name: '',
-                       last_name: '',
-                       display_name: '',
-                       timezone: '')).not_to be_valid
-  end
-
-  describe 'User validations' do
+  describe 'Model validations' do
     it { expect(user).to validate_presence_of(:first_name) }
     it { expect(user).to validate_presence_of(:last_name) }
     it { expect(user).to validate_presence_of(:display_name) }
