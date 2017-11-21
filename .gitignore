@@ -54,6 +54,7 @@ Session.vim
 .ruby-version
 .ruby-gemset
 
-config/database.yml
+/config/database.yml
 
 coverage
+public/
