@@ -7,6 +7,8 @@ FactoryBot.define do
     email 'fiona.adler@outmarket.com.au'
     password 'Sdfgs9834lk9E$T6DFAgljr'
     password_confirmation 'Sdfgs9834lk9E$T6DFAgljr'
-    avatar { Rack::Test::UploadedFile.new(Rails.root.join('spec', 'factories', 'test_image.png'), 'image/png') }
+    avatar do
+      File.open(File.join(Rails.root, 'spec', 'factories', 'test_image.png'))
+    end
   end
 end

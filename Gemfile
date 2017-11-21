@@ -45,6 +45,7 @@ gem 'carrierwave', '~> 0.11.2'
 gem 'devise'
 gem 'fog-aws'
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
+gem 'paranoia', '~> 2.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -56,9 +57,9 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'factory_bot_rails'
   gem 'letter_opener'
+  gem 'letter_opener_web'
   gem 'rspec-rails', '~> 3.5'
   gem 'selenium-webdriver'
-  gem 'letter_opener_web'
 end
 
 group :test do

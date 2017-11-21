@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
     user.save
   end
 
-  it 'is valid with valid attributes' do
+  it 'has a valid factory' do
     expect(user).to be_valid
   end
 
