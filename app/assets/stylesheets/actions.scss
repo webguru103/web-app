@@ -1,0 +1,31 @@
+// Place all the styles related to the Actions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+div {
+	&.actions-board {
+		background: #efefef;
+		text-align: center;
+	}
+	&._actions-group {
+		width: 275px;
+		background-color: #00CDFF;
+	}
+	&._actions-title {
+		text-align: left;
+		color: #FFFFFF;
+		font-size: 14px;
+		line-height: 19px;
+		padding: 10px;
+		width: 100%;
+		border-bottom: 1px solid rgba(255,255,255,0.5);
+	}
+	&._actions {
+		display: inline-block;
+		width: 235px;
+		padding: 10px;
+		margin: 10px;
+		box-shadow: 1px 1px 6px 1px rgba(0,0,0,0.5);
+		background: #FFFFFF;
+		color: #263238;
+	}
+}
