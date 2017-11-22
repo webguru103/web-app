@@ -41,7 +41,7 @@ gem 'react-rails'
 
 gem 'browserify-rails'
 
-gem 'carrierwave', '~> 0.11.2'
+gem 'carrierwave', '~> 1.2', '>= 1.2.1'
 gem 'devise'
 gem 'fog-aws'
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'

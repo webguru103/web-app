@@ -1,4 +1,6 @@
 class TeamMember < ApplicationRecord
+  acts_as_paranoid
+
   enum status: { Invited: 1, Active: 2, Deactivated: 3 }
   enum role: { Collaborator: 1, Admin: 2, Contributor: 3 }
 
